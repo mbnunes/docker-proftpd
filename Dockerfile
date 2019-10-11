@@ -13,6 +13,6 @@ RUN		sed -i "s/# DefaultRoot/DefaultRoot/" /etc/proftpd/proftpd.conf
 EXPOSE		20 21
 
 ADD		docker-entrypoint.sh /usr/local/sbin/docker-entrypoint.sh
-ENTRYPOINT	["/usr/local/sbin/docker-entrypoint.sh"]
+#ENTRYPOINT	["/usr/local/sbin/docker-entrypoint.sh"]
 
 CMD		["proftpd", "--nodaemon"]
