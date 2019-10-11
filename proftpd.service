@@ -8,7 +8,7 @@ Environment="NAME=hauptmedia-proftpd"
 TimeoutStartSec=300
 ExecStartPre=-/usr/bin/docker kill ${NAME}
 ExecStartPre=-/usr/bin/docker rm -f ${NAME}
-ExecStartPre=/usr/bin/docker pull hauptmedia/proftpd
+ExecStartPre=/usr/bin/docker pull mbnunes/docker-proftpd-mysql
 ExecStart=/usr/bin/docker run \
 	--name ${NAME} \
 	-p 20:20 \
