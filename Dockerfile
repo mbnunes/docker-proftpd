@@ -1,9 +1,9 @@
-FROM		debian:jessie
+FROM		mbnunes/vlk-ubuntu
 
 ENV     	DEBIAN_FRONTEND noninteractive
 
 RUN     	apt-get update -qq && \
-	        apt-get install -y proftpd && \
+	        apt-get install -y proftpd-basic proftpd-mod-mysql && \
 	        apt-get clean autoclean && \
 	        apt-get autoremove --yes && \
 	        rm -rf /var/lib/{apt,dpkg,cache,log}/
