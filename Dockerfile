@@ -6,9 +6,6 @@ RUN     	apt-get update -qq && \
 	        apt-get install -y proftpd-basic proftpd-mod-mysql nginx && \
 	        apt-get clean autoclean && \
 	        apt-get autoremove --yes && \
-	        addgroup --system --gid 101 nginx && \
-    		adduser --system --disabled-login --ingroup nginx --no-create-home \
-		--home /nonexistent --gecos "nginx user" --shell /bin/false --uid 101 nginx && \
 	        rm -rf /var/lib/{apt,dpkg,cache,log}/
 
 RUN		sed -i "s/# DefaultRoot/DefaultRoot/" /etc/proftpd/proftpd.conf
